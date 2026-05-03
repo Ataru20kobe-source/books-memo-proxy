@@ -2,7 +2,8 @@ export default async function handler(req, res) {
   // CORSヘッダー
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key, anthropic-version');
+  res.setHeader('Access-Control-Max-Age', '86400');
 
   // OPTIONSリクエスト（プリフライト）への応答
   if (req.method === 'OPTIONS') {
